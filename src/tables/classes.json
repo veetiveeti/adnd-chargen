@@ -1,0 +1,585 @@
+{
+    "classes": [
+        {
+            "name": "Cleric",
+            "minimumAbilityScores": {
+                "wisdom": 9
+            },
+            "tenPercentXpBonus": {
+                "wisdom": 16
+            },
+            "hitDie": "d8",
+            "maxHD": 9,
+            "spellAbility": true,
+            "levelLimit": "none",
+            "armor": "any",
+            "shield": "any",
+            "weapons": [
+                "club",
+                "flail",
+                "hammer",
+                "mace",
+                "staff"
+            ],
+            "weaponProficiency": {
+                "score": "2",
+                "penalty": "-3",
+                "newProficiency": "1/4 levels"
+            },
+            "alignment": "any",
+            "specialSkills": [
+                "Turn undead, devils, demons and anti-paladins",
+                "Create Holy Water at 5th level (DMG p. 114)",
+                "20 to 200 fanatically loyal followers at 8th level (DMG p. 16)"
+            ],
+            "startingMoney": "3d6",
+            "savingThrows": {
+                "poison": 10,
+                "petrify": 13,
+                "rod": 14,
+                "breath": 16,
+                "spell": 15
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            },
+            "turnUndead": {
+                "level": 1,
+                "score": {
+                    "skeleton": 10,
+                    "zombie": 13,
+                    "ghoul": 16,
+                    "shadow": 19,
+                    "wight": 20
+                }
+            }
+        },
+        {
+            "name": "Druid",
+            "minimumAbilityScores": {
+                "wisdom": 12,
+                "charisma": 15
+            },
+            "tenPercentXpBonus": {
+                "wisdom": 16,
+                "charisma": 16
+            },
+            "hitDie": "d8",
+            "maxHD": 14,
+            "spellAbility": true,
+            "levelLimit": 14,
+            "armor": "leather",
+            "shield": "wooden",
+            "weapons": [
+                "club",
+                "dagger",
+                "dart",
+                "hammer",
+                "scimitar",
+                "sling",
+                "spear",
+                "staff"
+            ],
+            "weaponProficiency": {
+                "score": "2",
+                "penalty": "-4",
+                "newProficiency": "1/5 levels"
+            },
+            "alignment": "true neutral",
+            "specialSkills": [
+                "At 3rd level: identify plant/animal/pure water & pass without trace through plants",
+                "7th level: immune to woodland charm",
+                "Change form 3x/day, which heals 10%-60% of dmg sustained prior to changing form",
+                "Speak druidic tongue",
+                "+2 to saves vs fire and electricity"
+            ],
+            "startingMoney": "3d6",
+            "savingThrows": {
+                "poison": 10,
+                "petrify": 13,
+                "rod": 14,
+                "breath": 16,
+                "spell": 15
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Fighter",
+            "minimumAbilityScores": {
+                "strength": 9,
+                "constitution": 7
+            },
+            "tenPercentXpBonus": {
+                "strength": 16
+            },
+            "hitDie": "d10",
+            "maxHD": 9,
+            "spellAbility": false,
+            "levelLimit": "none",
+            "armor": "any",
+            "shield": "any",
+            "weapons": "any",
+            "weaponProficiency": {
+                "score": "4",
+                "penalty": "-2",
+                "newProficiency": "1/3 levels"
+            },
+            "alignment": "any",
+            "specialSkills": [
+                "Gets a number of attacks on creatures of 1HD or less equal to experience level of the fighter",
+                "At 9th level attracts followers and may establish a stronghold plus collect taxes"
+            ],
+            "startingMoney": "5d4",
+            "savingThrows": {
+                "poison": 14,
+                "petrify": 15,
+                "rod": 16,
+                "breath": 17,
+                "spell": 17
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Paladin",
+            "minimumAbilityScores": {
+                "strength": 12,
+                "intelligence": 9,
+                "wisdom": 13,
+                "constitution": 9,
+                "charisma": 17
+            },
+            "tenPercentXpBonus": {
+                "strength": 16,
+                "wisdom": 16
+            },
+            "hitDie": "d10",
+            "maxHD": 9,
+            "spellAbility": "at 9th",
+            "levelLimit": "none",
+            "armor": "any",
+            "shield": "any",
+            "weapons": "any",
+            "weaponProficiency": {
+                "score": "3",
+                "penalty": "-2",
+                "newProficiency": "1/3 levels"
+            },
+            "alignment": "lawful good",
+            "specialSkills": [
+                "Detect evil 60'",
+                "Make all saves at +2",
+                "Immune to disease",
+                "Lay on hands = 2hp x level once / day",
+                "Cure disease 1/week",
+                "Protection from evil 10' radius",
+                "Turn Undead, devils, demons as cleric of 3 levels lower",
+                "At 4th level gain warhorse",
+                "Holy Sword bonuses",
+                "Cast spells at 9th level",
+                "Must tithe 10% of all treasure"
+            ],
+            "startingMoney": "5d4",
+            "savingThrows": {
+                "poison": 14,
+                "petrify": 15,
+                "rod": 16,
+                "breath": 17,
+                "spell": 17
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Ranger",
+            "minimumAbilityScores": {
+                "strength": 13,
+                "intelligence": 13,
+                "wisdom": 14,
+                "constitution": 14
+            },
+            "tenPercentXpBonus": {
+                "strength": 16,
+                "intelligence": 16,
+                "wisdom": 16
+            },
+            "hitDie": "d8",
+            "maxHD": 11,
+            "spellAbility": "at 8th",
+            "levelLimit": "none",
+            "armor": "any",
+            "shield": "any",
+            "weapons": "any",
+            "weaponProficiency": {
+                "score": "3",
+                "penalty": "-2",
+                "newProficiency": "1/3 levels"
+            },
+            "alignment": "any good",
+            "specialSkills": [
+                "+1 x level dmg to giant class creatures",
+                "Surprise others 50%; Surprised only 1 in 6",
+                "Tracks at 10% + 10% per level",
+                "Cast Druid Spells at 8th level",
+                "Casts M-U Spells at 9th level",
+                "Gains followers at 10th level"
+            ],
+            "startingMoney": "5d4",
+            "savingThrows": {
+                "poison": 14,
+                "petrify": 15,
+                "rod": 16,
+                "breath": 17,
+                "spell": 17
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Magic-User",
+            "minimumAbilityScores": {
+                "intelligence": 9,
+                "dexterity": 6
+            },
+            "tenPercentXpBonus": {
+                "intelligence": 16
+            },
+            "hitDie": "d4",
+            "maxHD": 11,
+            "spellAbility": true,
+            "levelLimit": "none",
+            "armor": "none",
+            "shield": "none",
+            "weapons": [
+                "dagger",
+                "dart",
+                "staff"
+            ],
+            "weaponProficiency": {
+                "score": "1",
+                "penalty": "-5",
+                "newProficiency": "1/6 levels"
+            },
+            "alignment": "any",
+            "specialSkills": [
+                "May create potions and scrolls at 7th level",
+                "Enchant weapons, misc. magic items at 11th level",
+                "Enchant armor at 12th level",
+                "Enchant major items at 16th level",
+                "Unlimited cantrips at 7th level",
+                "Can build a stronghold at 12th level"
+            ],
+            "startingMoney": "2d4",
+            "savingThrows": {
+                "poison": 14,
+                "petrify": 13,
+                "rod": 11,
+                "breath": 15,
+                "spell": 12
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Illusionist",
+            "minimumAbilityScores": {
+                "intelligence": 15,
+                "dexterity": 16
+            },
+            "tenPercentXpBonus": {
+                "no bonus": true
+            },
+            "hitDie": "d4",
+            "maxHD": 10,
+            "spellAbility": true,
+            "levelLimit": "none",
+            "armor": "none",
+            "shield": "none",
+            "weapons": [
+                "dagger",
+                "dart",
+                "staff"
+            ],
+            "weaponProficiency": {
+                "score": "1",
+                "penalty": "-5",
+                "newProficiency": "1/6 levels"
+            },
+            "alignment": "any",
+            "specialSkills": [
+                "May create items dealing with illusion starting at 10th level"
+            ],
+            "startingMoney": "2d4",
+            "savingThrows": {
+                "poison": 14,
+                "petrify": 13,
+                "rod": 11,
+                "breath": 15,
+                "spell": 12
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Thief",
+            "minimumAbilityScores": {
+                "dexterity": 9
+            },
+            "tenPercentXpBonus": {
+                "dexterity": 16
+            },
+            "hitDie": "d6",
+            "maxHD": 10,
+            "spellAbility": "at 10th",
+            "levelLimit": "none",
+            "armor": "leather",
+            "shield": "none",
+            "weapons": [
+                "club",
+                "dagger",
+                "dart",
+                "sling",
+                "sword: short",
+                "broad",
+                "long"
+            ],
+            "weaponProficiency": {
+                "score": "2",
+                "penalty": "-3",
+                "newProficiency": "1/4 levels"
+            },
+            "alignment": "any neutral or evil",
+            "specialSkills": [
+                "+4 to-hit backstab: 1st level x2 dmg; 5th level x3 dmg; 9th level x4 dmg; 13th level x5 dmg",
+                "Thieves cant",
+                "Thief Skills",
+                "Read magic spells from scrolls at 10th level with 25% chance of failure or backfire +1% for each level of the spell above 1st",
+                "Attract followers at 10th level"
+            ],
+            "startingMoney": "2d6",
+            "thiefSkills": {
+                "pickPockets": {
+                    "base": 30,
+                    "modifier": {
+                        "dwarf": 0,
+                        "elf": 5,
+                        "gnome": 0,
+                        "halfElf": 10,
+                        "halfling": 5,
+                        "half-orc": -5
+                    }
+                },
+                "openLocks": {
+                    "base": 25,
+                    "modifier": {
+                        "dwarf": 10,
+                        "elf": -5,
+                        "gnome": 5,
+                        "halfElf": 0,
+                        "halfling": 5,
+                        "half-orc": 5
+                    }
+                },
+                "findRemoveTraps": {
+                "base": 20,
+                "modifier": {
+                    "dwarf": 15,
+                    "elf": 0,
+                    "gnome": 10,
+                    "halfElf": 0,
+                    "halfling": 5,
+                    "half-orc": 5
+                }
+                },
+                "moveSilently": {
+                    "base": 15,
+                    "modifier": {
+                        "dwarf": 0,
+                        "elf": 5,
+                        "gnome": 5,
+                        "halfElf": 0,
+                        "halfling": 10,
+                        "half-orc": 0
+                    }
+                },
+                "hideInShadows": {
+                    "base": 10,
+                    "modifier": {
+                        "dwarf": 0,
+                        "elf": 10,
+                        "gnome": 5,
+                        "halfElf": 5,
+                        "halfling": 15,
+                        "half-orc": 0
+                    }
+                },
+                "hearNoise": {
+                    "base": 10,
+                    "modifier": {
+                        "dwarf": 0,
+                        "elf": 5,
+                        "gnome": 10,
+                        "halfElf": 0,
+                        "halfling": 5,
+                        "half-orc": 5
+                    }
+                },
+                "climbWalls": {
+                    "base": 85,
+                    "modifier": {
+                        "dwarf": -10,
+                        "elf": 0,
+                        "gnome": -15,
+                        "halfElf": 0,
+                        "halfling": -15,
+                        "half-orc": 5
+                    }
+                },
+                "readLanguages": false
+            },
+            "savingThrows": {
+                "poison": 13,
+                "petrify": 12,
+                "rod": 14,
+                "breath": 16,
+                "spell": 15
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Assassin",
+            "minimumAbilityScores": {
+                "strength": 12,
+                "intelligence": 11,
+                "dexterity": 12
+            },
+            "tenPercentXpBonus": {
+                "no bonus": true
+            },
+            "hitDie": "d6",
+            "maxHD": 15,
+            "spellAbility": "at 12th",
+            "levelLimit": 14,
+            "armor": "leather",
+            "shield": "any",
+            "weapons": "any",
+            "weaponProficiency": {
+                "score": "3",
+                "penalty": "-2",
+                "newProficiency": "1/4 levels"
+            },
+            "alignment": "evil",
+            "specialSkills": [
+                "Assassination: Assassins attack on the same combat tables as thieves do, including back stabbing. However, if they surprise (q.v.) a victim, they may attack on the ASSASSINATION TABLE. This gives a roughly 50% chance of immediately killing the victim; and if this fails, normal damage according to weapon type and strength ability modifiers still accrues to the victim. The assassin decides which attack mode he or she will use: assassination, back stabbing, or normal melee combat. (PHB p. 29)",
+                "Poison:  All non- assassins within 10’ of the bared weapon have a 10% cumulative chance each per melee round (q.v.) of noting the poison and attacking the poison-using assassin and/or calling for the city watch. (PHB p. 29)",
+                "Disguise: Disguise can be donned in order to gain the opportunity to poison or surprise a victim — or for other reasons. The assassin can disguise himself or herself so as to appear to be a human, semi-human, or humanoid creature of either sex. (PHB p. 29)"
+            ],
+            "startingMoney": "2d6",
+            "savingThrows": {
+                "poison": 13,
+                "petrify": 12,
+                "rod": 14,
+                "breath": 16,
+                "spell": 15
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            }
+        },
+        {
+            "name": "Monk",
+            "minimumAbilityScores": {
+                "strength": 15,
+                "wisdom": 15,
+                "dexterity": 15,
+                "constitution": 11
+            },
+            "tenPercentXpBonus": {
+                "no bonus": true
+            },
+            "hitDie": "d6",
+            "maxHD": 18,
+            "spellAbility": "no",
+            "levelLimit": 17,
+            "armor": "none",
+            "shield": "none",
+            "weapons": [
+                "club",
+                "crossbow",
+                "dagger",
+                "hand axe",
+                "javelin",
+                "pole arm",
+                "spear",
+                "staff"
+            ],
+            "weaponProficiency": {
+                "score": "1",
+                "penalty": "-3",
+                "newProficiency": "1/2 levels"
+            },
+            "alignment": "any lawful",
+            "specialSkills": [
+                "1 Open Hand attack per melee round, 1d3 damage",
+                "+ 0.5 DMG per LVL w/ Weapon",
+                ">=5 to-hit roll = stun 1d6 rounds + % to kill = victim AC + monk's LVL above 7",
+                "Reduce chance of surprise at 2nd level and beyond (PHB p.30)",
+                "Non-magical missiles (arrows, bolts, bullets, thrown daggers, thrown javelins, thrown spears, etc.) which would normally hit can be dodged or knocked aside if the monk is able to make his or her saving throw against petrification for each such potential hit.",
+                "if a monk makes his or her saving throw against an attack form, the monk will sustain no damage from the attack, even if the attack form was a fireball, for instance."
+            ],
+            "startingMoney": "5d4",
+            "savingThrows": {
+                "poison": 13,
+                "petrify": 12,
+                "rod": 14,
+                "breath": 16,
+                "spell": 15
+            },
+            "thac0": {
+                "level": 1,
+                "thac0": 20
+            },
+            "thiefSkills": {
+                "pickPockets": {
+                    "base": 30
+                },
+                "openLocks": {
+                    "base": 25
+                },
+                "findRemoveTraps": {
+                "base": 20
+                },
+                "moveSilently": {
+                    "base": 15
+                },
+                "hideInShadows": {
+                    "base": 10
+                },
+                "hearNoise": {
+                    "base": 10
+                },
+                "climbWalls": {
+                    "base": 85
+                }
+            }
+        }
+    ]
+}

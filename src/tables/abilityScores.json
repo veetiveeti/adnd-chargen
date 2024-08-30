@@ -1,0 +1,747 @@
+{
+    "abilityScores": [
+        {
+            "name": "Strength",
+            "scores": [
+                {
+                    "score": 3,
+                    "hitProbability": "-3",
+                    "damageAdjustment": "-1",
+                    "weightAllowance": -350,
+                    "openDoors": 1,
+                    "bendBars": "0%"
+                },
+                {
+                    "score": 4,
+                    "hitProbability": "-2",
+                    "damageAdjustment": "-1",
+                    "weightAllowance": -250,
+                    "openDoors": 1,
+                    "bendBars": "0%"
+                },
+                {
+                    "score": 5,
+                    "hitProbability": "-2",
+                    "damageAdjustment": "-1",
+                    "weightAllowance": -250,
+                    "openDoors": 1,
+                    "bendBars": "0%"
+                },
+                {
+                    "score": 6,
+                    "hitProbability": "-1",
+                    "damageAdjustment": "0",
+                    "weightAllowance": -150,
+                    "openDoors": 1,
+                    "bendBars": "0%"
+                },
+                {
+                    "score": 7,
+                    "hitProbability": "-1",
+                    "damageAdjustment": "0",
+                    "weightAllowance": -150,
+                    "openDoors": 1,
+                    "bendBars": "0%"
+                },
+                {
+                    "score": 8,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 0,
+                    "openDoors": "1-2",
+                    "bendBars": "1%"
+                },
+                {
+                    "score": 9,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 0,
+                    "openDoors": "1-2",
+                    "bendBars": "1%"
+                },
+                {
+                    "score": 10,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 0,
+                    "openDoors": "1-2",
+                    "bendBars": "2%"
+                },
+                {
+                    "score": 11,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 0,
+                    "openDoors": "1-2",
+                    "bendBars": "2%"
+                },
+                {
+                    "score": 12,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 100,
+                    "openDoors": "1-2",
+                    "bendBars": "4%"
+                },
+                {
+                    "score": 13,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 100,
+                    "openDoors": "1-2",
+                    "bendBars": "4%"
+                },
+                {
+                    "score": 14,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 200,
+                    "openDoors": "1-2",
+                    "bendBars": "7%"
+                },
+                {
+                    "score": 15,
+                    "hitProbability": "0",
+                    "damageAdjustment": "0",
+                    "weightAllowance": 200,
+                    "openDoors": "1-2",
+                    "bendBars": "7%"
+                },
+                {
+                    "score": 16,
+                    "hitProbability": "0",
+                    "damageAdjustment": "+1",
+                    "weightAllowance": 350,
+                    "openDoors": "1-3",
+                    "bendBars": "10%"
+                },
+                {
+                    "score": 17,
+                    "hitProbability": "+1",
+                    "damageAdjustment": "+1",
+                    "weightAllowance": 500,
+                    "openDoors": "1-3",
+                    "bendBars": "13%"
+                },
+                {
+                    "score": 18,
+                    "hitProbability": "+1",
+                    "damageAdjustment": "+2",
+                    "weightAllowance": 750,
+                    "openDoors": "1-3",
+                    "bendBars": "16%"
+                },
+                {
+                    "score": "18(50)",
+                    "hitProbability": "+1",
+                    "damageAdjustment": "+3",
+                    "weightAllowance": 1000,
+                    "openDoors": "1-3",
+                    "bendBars": "20%"
+                },
+                {
+                    "score": "18(75)",
+                    "hitProbability": "+2",
+                    "damageAdjustment": "+3",
+                    "weightAllowance": 1250,
+                    "openDoors": "1-4",
+                    "bendBars": "25%"
+                },
+                {
+                    "score": "18(90)",
+                    "hitProbability": "+2",
+                    "damageAdjustment": "+4",
+                    "weightAllowance": 1500,
+                    "openDoors": "1-4",
+                    "bendBars": "30%"
+                },
+                {
+                    "score": "18(99)",
+                    "hitProbability": "+2",
+                    "damageAdjustment": "+5",
+                    "weightAllowance": 2000,
+                    "openDoors": "1-4(1)",
+                    "bendBars": "35%"
+                },
+                {
+                    "score": "18(00)",
+                    "hitProbability": "+3",
+                    "damageAdjustment": "+6",
+                    "weightAllowance": 3000,
+                    "openDoors": "1-5(2)",
+                    "bendBars": "40%"
+                }
+            ]
+        },
+        {
+            "name": "Intelligence",
+            "scores": [
+                {
+                    "score": 3,
+                    "languages": 0,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 4,
+                    "languages": 0,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 5,
+                    "languages": 0,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 6,
+                    "languages": 0,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 7,
+                    "languages": 0,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 8,
+                    "languages": 1,
+                    "spellLevelMax": 0,
+                    "learnSpells": "0%",
+                    "maxSpellsPerLevel": "-"
+                },
+                {
+                    "score": 9,
+                    "languages": 1,
+                    "spellLevelMax": 4,
+                    "learnSpells": "35%",
+                    "maxSpellsPerLevel": 6
+                },
+                {
+                    "score": 10,
+                    "languages": 2,
+                    "spellLevelMax": 5,
+                    "learnSpells": "45%",
+                    "maxSpellsPerLevel": 7
+                },
+                {
+                    "score": 11,
+                    "languages": 2,
+                    "spellLevelMax": 5,
+                    "learnSpells": "45%",
+                    "maxSpellsPerLevel": 7
+                },
+                {
+                    "score": 12,
+                    "languages": 3,
+                    "spellLevelMax": 5,
+                    "learnSpells": "45%",
+                    "maxSpellsPerLevel": 7
+                },
+                {
+                    "score": 13,
+                    "languages": 3,
+                    "spellLevelMax": 6,
+                    "learnSpells": "55%",
+                    "maxSpellsPerLevel": 9
+                },
+                {
+                    "score": 14,
+                    "languages": 4,
+                    "spellLevelMax": 6,
+                    "learnSpells": "55%",
+                    "maxSpellsPerLevel": 9
+                },
+                {
+                    "score": 15,
+                    "languages": 4,
+                    "spellLevelMax": 7,
+                    "learnSpells": "65%",
+                    "maxSpellsPerLevel": 11
+                },
+                {
+                    "score": 16,
+                    "languages": 5,
+                    "spellLevelMax": 7,
+                    "learnSpells": "65%",
+                    "maxSpellsPerLevel": 11
+                },
+                {
+                    "score": 17,
+                    "languages": 6,
+                    "spellLevelMax": 8,
+                    "learnSpells": "75%",
+                    "maxSpellsPerLevel": 14
+                },
+                {
+                    "score": 18,
+                    "languages": 7,
+                    "spellLevelMax": 9,
+                    "learnSpells": "85%",
+                    "maxSpellsPerLevel": 18
+                },
+                {
+                    "score": 19,
+                    "languages": 9,
+                    "spellLevelMax": 10,
+                    "learnSpells": "95%",
+                    "maxSpellsPerLevel": "All"
+                }
+            ]
+        },
+        {
+            "name": "Wisdom",
+            "scores": [
+                {
+                    "score": 3,
+                    "magicAdjustment": "-3",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 4,
+                    "magicAdjustment": "-2",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 5,
+                    "magicAdjustment": "-1",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 6,
+                    "magicAdjustment": "-1",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 7,
+                    "magicAdjustment": "-1",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 8,
+                    "magicAdjustment": "0",
+                    "spellFailure": "-",
+                    "bonusSpells": "-"
+                },
+                {
+                    "score": 9,
+                    "magicAdjustment": "0",
+                    "spellFailure": "20 %",
+                    "bonusSpells": "none"
+                },
+                {
+                    "score": 10,
+                    "magicAdjustment": "0",
+                    "spellFailure": "15 %",
+                    "bonusSpells": "none"
+                },
+                {
+                    "score": 11,
+                    "magicAdjustment": "0",
+                    "spellFailure": "10 %",
+                    "bonusSpells": "none"
+                },
+                {
+                    "score": 12,
+                    "magicAdjustment": "0",
+                    "spellFailure": "5 %",
+                    "bonusSpells": "none"
+                },
+                {
+                    "score": 13,
+                    "magicAdjustment": "0",
+                    "spellFailure": "0 %",
+                    "bonusSpells": "1x1st"
+                },
+                {
+                    "score": 14,
+                    "magicAdjustment": "0",
+                    "spellFailure": "0%",
+                    "bonusSpells": "2x1st"
+                },
+                {
+                    "score": 15,
+                    "magicAdjustment": "+1",
+                    "spellFailure": "0%",
+                    "bonusSpells": "2x1st, 1x2nd"
+                },
+                {
+                    "score": 16,
+                    "magicAdjustment": "+2",
+                    "spellFailure": "0%",
+                    "bonusSpells": "2x1st, 2x2nd"
+                },
+                {
+                    "score": 17,
+                    "magicAdjustment": "+3",
+                    "spellFailure": "0%",
+                    "bonusSpells": "2x1st, 2x2nd, 1x3rd"
+                },
+                {
+                    "score": 18,
+                    "magicAdjustment": 4,
+                    "spellFailure": "0%",
+                    "bonusSpells": "2x1st, 2x2nd, 1x3rd, 1x4th"
+                }
+            ]
+        },
+        {
+            "name": "Dexterity",
+            "scores": [
+                {
+                    "score": 3,
+                    "reactionAdjustment": "-3",
+                    "missileAdjustment": "-3",
+                    "acAdjustment": "+4"
+                },
+                {
+                    "score": 4,
+                    "reactionAdjustment": "-2",
+                    "missileAdjustment": "-2",
+                    "acAdjustment": "+3"
+                },
+                {
+                    "score": 5,
+                    "reactionAdjustment": "-1",
+                    "missileAdjustment": "-1",
+                    "acAdjustment": "+2"
+                },
+                {
+                    "score": 6,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "+1"
+                },
+                {
+                    "score": 7,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 8,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 9,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 10,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 11,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 12,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 13,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 14,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "0"
+                },
+                {
+                    "score": 15,
+                    "reactionAdjustment": "0",
+                    "missileAdjustment": "0",
+                    "acAdjustment": "-1"
+                },
+                {
+                    "score": 16,
+                    "reactionAdjustment": "1",
+                    "missileAdjustment": "1",
+                    "acAdjustment": "-2"
+                },
+                {
+                    "score": 17,
+                    "reactionAdjustment": 2,
+                    "missileAdjustment": 2,
+                    "acAdjustment": -3
+                },
+                {
+                    "score": 18,
+                    "reactionAdjustment": "+3",
+                    "missileAdjustment": "+3",
+                    "acAdjustment": "-4"
+                }
+            ]
+        },
+        {
+            "name": "Constitution",
+            "scores": [
+                {
+                    "score": 3,
+                    "hitPointAdjustment": "-2",
+                    "systemShock": "35%",
+                    "resurrection": "40%"
+                },
+                {
+                    "score": 4,
+                    "hitPointAdjustment": "-1",
+                    "systemShock": "40%",
+                    "resurrection": "45%"
+                },
+                {
+                    "score": 5,
+                    "hitPointAdjustment": "-1",
+                    "systemShock": "45%",
+                    "resurrection": "50%"
+                },
+                {
+                    "score": 6,
+                    "hitPointAdjustment": "-1",
+                    "systemShock": "50%",
+                    "resurrection": "55%"
+                },
+                {
+                    "score": 7,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "55%",
+                    "resurrection": "60%"
+                },
+                {
+                    "score": 8,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "60%",
+                    "resurrection": "65%"
+                },
+                {
+                    "score": 9,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "65%",
+                    "resurrection": "70%"
+                },
+                {
+                    "score": 10,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "70%",
+                    "resurrection": "75%"
+                },
+                {
+                    "score": 11,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "75%",
+                    "resurrection": "80%"
+                },
+                {
+                    "score": 12,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "80%",
+                    "resurrection": "85%"
+                },
+                {
+                    "score": 13,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "85%",
+                    "resurrection": "90%"
+                },
+                {
+                    "score": 14,
+                    "hitPointAdjustment": "0",
+                    "systemShock": "88%",
+                    "resurrection": "92%"
+                },
+                {
+                    "score": 15,
+                    "hitPointAdjustment": "+1",
+                    "systemShock": "91%",
+                    "resurrection": "94%"
+                },
+                {
+                    "score": 16,
+                    "hitPointAdjustment": "+2",
+                    "systemShock": "95%",
+                    "resurrection": "96%"
+                },
+                {
+                    "score": 17,
+                    "hitPointAdjustment": "+2(+3)",
+                    "systemShock": "97%",
+                    "resurrection": "98%"
+                },
+                {
+                    "score": 18,
+                    "hitPointAdjustment": "+2(+4)",
+                    "systemShock": "99%",
+                    "resurrection": "100%"
+                }
+            ]
+        },
+        {
+            "name": "Charisma",
+            "scores": [
+              {
+                "score": 3,
+                "maxHenchman": 1,
+                "loyalty": "-30%",
+                "reaction": "-25%"
+              },
+              {
+                "score": 4,
+                "maxHenchman": 1,
+                "loyalty": "-25%",
+                "reaction": "-20%"
+              },
+              {
+                "score": 5,
+                "maxHenchman": 2,
+                "loyalty": "-20%",
+                "reaction": "-15%"
+              },
+              {
+                "score": 6,
+                "maxHenchman": 2,
+                "loyalty": "-15%",
+                "reaction": "-10%"
+              },
+              {
+                "score": 7,
+                "maxHenchman": 3,
+                "loyalty": "-10%",
+                "reaction": "-5%"
+              },
+              {
+                "score": 8,
+                "maxHenchman": 3,
+                "loyalty": "-5%",
+                "reaction": "none"
+              },
+              {
+                "score": 9,
+                "maxHenchman": 4,
+                "loyalty": "none",
+                "reaction": "none"
+              },
+              {
+                "score": 10,
+                "maxHenchman": 4,
+                "loyalty": "none",
+                "reaction": "none"
+              },
+              {
+                "score": 11,
+                "maxHenchman": 4,
+                "loyalty": "none",
+                "reaction": "none"
+              },
+              {
+                "score": 12,
+                "maxHenchman": 5,
+                "loyalty": "none",
+                "reaction": "none"
+              },
+              {
+                "score": 13,
+                "maxHenchman": 5,
+                "loyalty": "none",
+                "reaction": "5%"
+              },
+              {
+                "score": 14,
+                "maxHenchman": 6,
+                "loyalty": "5%",
+                "reaction": "10%"
+              },
+              {
+                "score": 15,
+                "maxHenchman": 7,
+                "loyalty": "15%",
+                "reaction": "15%"
+              },
+              {
+                "score": 16,
+                "maxHenchman": 8,
+                "loyalty": "20%",
+                "reaction": "25%"
+              },
+              {
+                "score": 17,
+                "maxHenchman": 10,
+                "loyalty": "30%",
+                "reaction": "30%"
+              },
+              {
+                "score": 18,
+                "maxHenchman": 15,
+                "loyalty": "40%",
+                "reaction": "35%"
+              },
+              {
+                "score": 19,
+                "maxHenchman": 20,
+                "loyalty": "50%",
+                "reaction": "40%"
+              },
+              {
+                "score": 20,
+                "maxHenchman": 25,
+                "loyalty": "60%",
+                "reaction": "45%"
+              },
+              {
+                "score": 21,
+                "maxHenchman": 30,
+                "loyalty": "70%",
+                "reaction": "50%"
+              },
+              {
+                "score": 22,
+                "maxHenchman": 35,
+                "loyalty": "80%",
+                "reaction": "55%"
+              },
+              {
+                "score": 23,
+                "maxHenchman": 40,
+                "loyalty": "90%",
+                "reaction": "60%"
+              },
+              {
+                "score": 24,
+                "maxHenchman": 45,
+                "loyalty": "100%",
+                "reaction": "65%"
+              },
+              {
+                "score": 25,
+                "maxHenchman": 50,
+                "loyalty": "100%",
+                "reaction": "70%"
+              }
+            ]
+          }
+    ]
+}

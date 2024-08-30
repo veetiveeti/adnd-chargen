@@ -1,0 +1,231 @@
+{
+    "races": [
+        {
+            "name": "Dwarf",
+            "classes": {
+                "cleric": false,
+                "druid": false,
+                "fighter": true,
+                "paladin": false,
+                "ranger": false,
+                "magic-user": false,
+                "illusionist": false,
+                "thief": true,
+                "assassin": true,
+                "monk": false
+            },
+            "bonus": {
+                "constitution": 1
+            },
+            "minus": {
+                "charisma": 1
+            },
+            "languages": [
+                "Dwarvish",
+                "Gnomish",
+                "Goblin",
+                "Kobold",
+                "Orcish",
+                "Common"
+            ],
+            "savingThrows": {
+                "magic": "Magic Wands, Staves, Rods and Spells: +1 for every 3.5 points of constitution",
+                "poison": "Poison: +1 for every 3.5 points of constitution"
+            },
+            "specialSkills": {
+                "infraVision": "60' infravision",
+                "detectPassage": "Detect grade or slope in passage, upwards or downwards: 75% probability (d4, score 1-3)",
+                "detectConstruction": "Detect new construction: 75% probability (d4, score 1-3)",
+                "detectRoomWalls": "Detect sliding walls or rooms: 66 2/3 % probability (d6, score 1-4)",
+                "detectTraps": "Detect traps involving pits, falling blocks, or stonework traps: 50% probability (d6, score 1-3)",
+                "determineDepth": "Determine approximate depth underground: 50% probability (d6, score 1-3)",
+                "bonusToAttack": "In melee combat, dwarves receive a +1 bonus to attack rolls against orcs, half-orcs, goblins, and hobgoblins",
+                "bonusAgainstGiant": "In melee combat, opponent receives a -4 to attack roll if ogre, troll, giant, or titan"
+            }
+        },
+        {
+            "name": "Elf",
+            "classes": {
+                "cleric": false,
+                "druid": false,
+                "fighter": true,
+                "paladin": false,
+                "ranger": false,
+                "magic-user": true,
+                "illusionist": false,
+                "thief": true,
+                "assassin": true
+            },
+            "bonus": {
+                "dexterity": 1
+            },
+            "minus": {
+                "constitution": 1
+            },
+            "languages": [
+                "Elvish",
+                "Gnoll",
+                "Goblin",
+                "Hobgoblin",
+                "Orcish",
+                "Common",
+                "Gnomish",
+                "Halfling"
+            ],
+            "specialSkills": {
+                "language": "Elf with over 15 intelligence are able to learn one additional language for every point of intelligence over 15, i.e. a character with an 18 intelligence score could learn three additional languages",
+                "resistance": "90% resistance to sleep and charm spells (if these spells are cast upon them a percentile dice roll of 91% or better is required to allow the magic any chance of having an effect, and even then the saving throw against spells is allowed versus the charm spell)",
+                "weaponBonus": "When employing either a bow of any sort other than a crossbow, or a short or long sword, elven characters gain a bonus of +1 on their die rolls “to hit”.",
+                "infraVision": "60' infravision",
+                "secretDoors": "Secret or concealed doors are difficult to hide from elves. Merely passing within 10’ of the latter makes an elven character 16 2/3% (1 in 6) likely to notice it. If actively searching for such doors, elven characters are 33 1/3% (2 in 6) likely to find a secret door and 50% likely (3 in 6) to discover a concealed portal.",
+                "moveSilently": "If alone and not in metal armor (or if well in advance — 90’ or more — of a party which does not consist entirely of elves and/or halflings) an elven character moves so silently that he or she will surprise (q.v.) monsters 66 2/3% (d6, 1 through 4) of the time unless some portal must be opened in order to confront the monster. In the latter case the chance for surprise drops to 33 1/3% (d6, 1-2)."
+            }
+        },
+        {
+            "name": "Gnome",
+            "classes": {
+                "cleric": false,
+                "druid": false,
+                "fighter": true,
+                "paladin": false,
+                "ranger": false,
+                "magic-user": false,
+                "illusionist": true,
+                "thief": true,
+                "assassin": true,
+                "monk": false
+            },
+            "languages": [
+                "Dwarvish",
+                "Gnome",
+                "Halfling",
+                "Goblin",
+                "Kobold",
+                "Common",
+                "Communication with any burrowing mammal (moles, badgers, ground squirrels etc)"
+            ],
+            "savingThrows": {
+                "magic": "Magic Wands, Staves, Rods and Spells: +1 for every 3.5 points of constitution"
+            },
+            "specialSkills": {
+                "infraVision": "60' infravision",
+                "detectPassage": "Detect grade or slope in passage upwards or downwards: 80% probability (d10, score 1-8)",
+                "detectUnsafe": "Detect unsafe walls, ceilings, or floors: 70% probability (d10, score 1-7)",
+                "determineDepth": "Determine approximate depth underground: 60% probability (d10, score 1-6)",
+                "determineDirection": "Determine direction of travel underground: 50% probability (d10, score 1-5)",
+                "bonusToAttack": "In melee combat, gnomes receive a +1 bonus to attack rolls against goblin or kobold",
+                "bonusAgainstGiant": "In melee combat, opponent receives a -4 to attack roll if gnoll, bugbear, ogre, troll, giant, or titan"
+            }
+        },
+        {
+            "name": "Half-elf",
+            "classes": {
+                "cleric": true,
+                "druid": true,
+                "fighter": true,
+                "paladin": false,
+                "ranger": true,
+                "magic-user": true,
+                "illusionist": false,
+                "thief": true,
+                "assassin": true,
+                "monk": false
+            },
+            "languages": [
+                "Elvish",
+                "Gnoll",
+                "Goblin",
+                "Hobgoblin",
+                "Orcish",
+                "Common",
+                "Gnomish",
+                "Halfling"
+            ],
+            "specialSkills": {
+                "language": "Half-elven characters of above 16 intelligence are able to learn one additional language for every point of intelligence above 16, so that a 17 intelligence indicates the character can learn one additional language, and an 18 intelligence indicates two languages can be learned in addition to those listed above.",
+                "resistance": "Half-elven characters have a 30% resistance to sleep and charm spells (if the spells are cast upon them, a percentile dice roll of 31% or better is required to allow the magic any chance of having an effect, and even then the saving throw against spells is allowed versus the charm spell).",
+                "weaponBonus": "When employing either a bow of any sort other than a crossbow, or a short or long sword, elven characters gain a bonus of +1 on their die rolls “to hit”.",
+                "infraVision": "60' infravision",
+                "secretDoors": "Secret or concealed doors are difficult to hide from half-elves, just as they are noticeable by elves. Merely passing within 10’ of a concealed door gives the half- elven character a 1 in 6 chance (16 2/3%) chance of spotting it. If the character is actively seeking to discover such doors, he or she has a 2 in 6 chance (33 1/3%) of spotting a secret door and a 3 in 6 chance (50%) of locating a concealed door."
+            }
+        },
+        {
+            "name": "Halfling",
+            "classes": {
+                "cleric": false,
+                "druid": false,
+                "fighter": true,
+                "paladin": false,
+                "ranger": false,
+                "magic-user": false,
+                "illusionist": false,
+                "thief": true,
+                "assassin": false,
+                "monk": false
+            },
+            "bonus": {
+                "dexterity": 1
+            },
+            "minus": {
+                "strength": 1
+            },
+            "savingThrows": {
+                "magic": "Magic Wands, Staves, Rods and Spells: +1 for every 3.5 points of constitution",
+                "poison": "Poison: +1 for every 3.5 points of constitution"
+            },
+            "languages": [
+                "Dwarven", "Elven", "Gnome", "Goblin", "Halfling", "Orcish", "Common"
+            ],
+            "specialSkills": {
+                "language": "Halflings with intelligence above 16 can learn one additional language for every point of intelligence they possess above the 16 minimum, so at 17 intelligence the character can learn one additional language, and at 18 intelligence two can be learned.",
+                "infraVision": "Certain halfling characters have infravision. Those with mixed blood are assumed to have infravision which functions up to 30’ distant, while those of pure Stoutish blood are able to see heat radiation variation at up to 60 ft. (normal infravision).",
+                "detectPassage": "When concentrating, is able to note if a passage is an up or down grade 75% (d4, 1-3) of the time, and they can determine direction 50% of the time.",
+                "moveSilently": "If alone (or well in advance — 90’ or more — of a party which does not consist entirely of halflings or elves not in metal armor) and not in metal armor, halfling characters are able to move very silently; thus, if they do not have to open some form of door or other screen, they will surprise (q.v.) a monster 66 2/3% (d6, 1-4) of the time. If a door must be opened, chance for surprise drops to 33 1/3% (d6, 1-2)."
+            }
+        },
+        {
+            "name": "Half-orc",
+            "classes": {
+                "cleric": true,
+                "druid": false,
+                "fighter": true,
+                "paladin": false,
+                "ranger": false,
+                "magic-user": false,
+                "illusionist": false,
+                "thief": true,
+                "assassin": true,
+                "monk": false
+            },
+            "bonus": {
+                "strength": 1,
+                "constitution": 1
+            },
+            "minus": {
+                "charisma": 1
+            },
+            "languages": [
+                "Orcish", "Common"
+            ],
+            "specialSkills": {
+                "infraVision": "60' infravision",
+                "unalteredCharisma": "Half-orcs are not affected by the charisma penalty when dealing with half-orc henchmen"
+            }
+        },
+        {
+            "name": "Human",
+            "classes": {
+                "cleric": true,
+                "druid": true,
+                "fighter": true,
+                "paladin": true,
+                "ranger": true,
+                "magic-user": true,
+                "illusionist": true,
+                "thief": true,
+                "assassin": true,
+                "monk": true
+            }
+        }
+    ]
+}

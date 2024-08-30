@@ -1,24 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import AbilityScoreRoller from './components/AbilityScoreRoller';
+
+import races from './tables/races.json';
+import classes from './tables/classes.json';
+import abilityScores from './tables/abilityScores.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AbilityScoreRoller races={races.races} classes={classes.classes} abilityScores={abilityScores.abilityScores} />
   );
 }
 
