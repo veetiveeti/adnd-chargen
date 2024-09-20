@@ -47,7 +47,7 @@ const RaceDetails = ({ race }) => {
             <ul>
                 {Object.entries(race.minus).map(([ability, value]) => (
                   <li key={ability}>
-                    {ability.charAt(0).toUpperCase() + ability.slice(1)}: +
+                    {ability.charAt(0).toUpperCase() + ability.slice(1)}: -
                     {value}
                   </li>
                 ))}

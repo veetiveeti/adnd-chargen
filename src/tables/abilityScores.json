@@ -132,7 +132,7 @@
                     "bendBars": "16%"
                 },
                 {
-                    "score": "18(50)",
+                    "score": 18.50,
                     "hitProbability": "+1",
                     "damageAdjustment": "+3",
                     "weightAllowance": 1000,
@@ -140,7 +140,7 @@
                     "bendBars": "20%"
                 },
                 {
-                    "score": "18(75)",
+                    "score": 18.75,
                     "hitProbability": "+2",
                     "damageAdjustment": "+3",
                     "weightAllowance": 1250,
@@ -148,7 +148,7 @@
                     "bendBars": "25%"
                 },
                 {
-                    "score": "18(90)",
+                    "score": 18.90,
                     "hitProbability": "+2",
                     "damageAdjustment": "+4",
                     "weightAllowance": 1500,
@@ -156,7 +156,7 @@
                     "bendBars": "30%"
                 },
                 {
-                    "score": "18(99)",
+                    "score": 18.99,
                     "hitProbability": "+2",
                     "damageAdjustment": "+5",
                     "weightAllowance": 2000,
@@ -164,7 +164,7 @@
                     "bendBars": "35%"
                 },
                 {
-                    "score": "18(00)",
+                    "score": 18.00,
                     "hitProbability": "+3",
                     "damageAdjustment": "+6",
                     "weightAllowance": 3000,
