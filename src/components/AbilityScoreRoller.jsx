@@ -62,16 +62,12 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
   }, []);
 
   useEffect(() => {
-      setRolledScores(rollAbilityScores());
-      setUsedIndices(new Set());
-    }, []);
-
-  useEffect(() => {
     setSelectedClass('')
   }, [selectedRace]);
 
   useEffect(() => {
-    if (selectedScores.strength === '18' && selectedClass === 'Fighter') {
+    const eligibleClasses = ['Fighter', 'Ranger', 'Paladin'];
+    if (selectedScores.strength === '18' && eligibleClasses.includes(selectedClass)) {
       setExceptionalStrength(rollExceptionalStrength());
     } else {
       setExceptionalStrength(null);
@@ -100,24 +96,30 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
   }, [selectedRace, selectedScores, classes, races]);
 
 const handleScoreChange = (ability, value) => {
-  const newScore = parseInt(value);
+  // Update selected scores
   setSelectedScores(prev => {
-    const oldScore = prev[ability];
-    if (oldScore !== '') {
-      setUsedIndices(prevUsed => {
-        const newUsed = new Set(prevUsed);
-        const oldIndex = rolledScores.findIndex((score, index) => score === parseInt(oldScore) && newUsed.has(index));
-        if (oldIndex !== -1) newUsed.delete(oldIndex);
-        return newUsed;
-      });
-    }
-    if (newScore && rolledScores.includes(newScore)) {
-      const availableIndex = rolledScores.findIndex((score, index) => score === newScore && !usedIndices.has(index));
-      if (availableIndex !== -1) {
-        setUsedIndices(prevUsed => new Set(prevUsed).add(availableIndex));
+    const newScores = { ...prev, [ability]: value };
+    
+    // Recalculate usedIndices from scratch based on all selected scores
+    // This avoids any closure/stale state issues
+    const newUsedIndices = new Set();
+    const availableIndices = [...rolledScores.keys()];
+    
+    // For each ability, find and mark the first available index with that score
+    ABILITY_SCORES.forEach(abilityName => {
+      const scoreValue = parseInt(newScores[abilityName]);
+      if (scoreValue && !isNaN(scoreValue)) {
+        const availableIndex = availableIndices.findIndex(idx => 
+          rolledScores[idx] === scoreValue && !newUsedIndices.has(idx)
+        );
+        if (availableIndex !== -1) {
+          newUsedIndices.add(availableIndices[availableIndex]);
+        }
       }
-    }
-    return { ...prev, [ability]: value };
+    });
+    
+    setUsedIndices(newUsedIndices);
+    return newScores;
   });
 };
 
@@ -312,47 +314,47 @@ const adjustedScores = useMemo(() => {
         <>
           <CharacterAbilities
             adjustedScores={adjustedScores}
-            raceName={selectedRaceDetails.name}
+            raceName={selectedRaceDetails?.name}
             exceptionalStrength={exceptionalStrength}
             strScore={selectedScores.strength}
-            strHitProbability={abilityDetails?.strength.hitProbability}
-            strDamageAdjustment={abilityDetails?.strength.damageAdjustment}
-            strWeightAllowance={abilityDetails?.strength.weightAllowance}
-            strOpenDoors={abilityDetails?.strength.openDoors}
-            strBendBars={abilityDetails?.strength.bendBars}
+            strHitProbability={abilityDetails?.strength?.hitProbability}
+            strDamageAdjustment={abilityDetails?.strength?.damageAdjustment}
+            strWeightAllowance={abilityDetails?.strength?.weightAllowance}
+            strOpenDoors={abilityDetails?.strength?.openDoors}
+            strBendBars={abilityDetails?.strength?.bendBars}
             intScore={selectedScores.intelligence}
-            intAdditionalLanguages={abilityDetails.intelligence.languages}
-            intMinSpellsPerLevel={abilityDetails.intelligence.minSpellsPerLevel}
-            intLearnSpells={abilityDetails.intelligence.learnSpells}
-            intMaxSpellsPerLevel={abilityDetails.intelligence.maxSpellsPerLevel}
+            intAdditionalLanguages={abilityDetails?.intelligence?.languages}
+            intMinSpellsPerLevel={abilityDetails?.intelligence?.minSpellsPerLevel}
+            intLearnSpells={abilityDetails?.intelligence?.learnSpells}
+            intMaxSpellsPerLevel={abilityDetails?.intelligence?.maxSpellsPerLevel}
             wisScore={selectedScores.wisdom}
-            wisMagicAdjustment={abilityDetails.wisdom.magicAdjustment}
-            wisSpellFailure={abilityDetails.wisdom.spellFailure}
-            wisBonusSpells={abilityDetails.wisdom.bonusSpells}
+            wisMagicAdjustment={abilityDetails?.wisdom?.magicAdjustment}
+            wisSpellFailure={abilityDetails?.wisdom?.spellFailure}
+            wisBonusSpells={abilityDetails?.wisdom?.bonusSpells}
             dexScore={selectedScores.dexterity}
-            dexMissileAdjustment={abilityDetails.dexterity.missileAdjustment}
-            dexReactionAdjustment={abilityDetails.dexterity.reactionAdjustment}
-            dexAcAdjustment={abilityDetails.dexterity.acAdjustment}
+            dexMissileAdjustment={abilityDetails?.dexterity?.missileAdjustment}
+            dexReactionAdjustment={abilityDetails?.dexterity?.reactionAdjustment}
+            dexAcAdjustment={abilityDetails?.dexterity?.acAdjustment}
             conScore={selectedScores.constitution}
             conHitPointAdjustment={
-              abilityDetails.constitution.hitPointAdjustment
+              abilityDetails?.constitution?.hitPointAdjustment
             }
-            conSystemShock={abilityDetails.constitution.systemShock}
-            conResurrection={abilityDetails.constitution.resurrection}
+            conSystemShock={abilityDetails?.constitution?.systemShock}
+            conResurrection={abilityDetails?.constitution?.resurrection}
             chaScore={selectedScores.charisma}
-            chaMaxHenchman={abilityDetails.charisma.maxHenchman}
-            chaLoyalty={abilityDetails.charisma.loyalty}
-            chaReaction={abilityDetails.charisma.reaction}
+            chaMaxHenchman={abilityDetails?.charisma?.maxHenchman}
+            chaLoyalty={abilityDetails?.charisma?.loyalty}
+            chaReaction={abilityDetails?.charisma?.reaction}
           />
 
           <CharacterDetails
             tenPercentXPBonus={selectedClassDetails.tenPercentXpBonus}
             hitDie={selectedClassDetails.hitDie}
-            poisonSave={selectedClassDetails.savingThrows.poison}
-            petrificationSave={selectedClassDetails.savingThrows.petrify}
-            rodSave={selectedClassDetails.savingThrows.rod}
-            breathSave={selectedClassDetails.savingThrows.breath}
-            spellSave={selectedClassDetails.savingThrows.spell}
+            poisonSave={selectedClassDetails.savingThrows?.poison}
+            petrificationSave={selectedClassDetails.savingThrows?.petrify}
+            rodSave={selectedClassDetails.savingThrows?.rod}
+            breathSave={selectedClassDetails.savingThrows?.breath}
+            spellSave={selectedClassDetails.savingThrows?.spell}
             savingThrows={selectedClassDetails.savingThrows}
             armor={selectedClassDetails.armor}
             shield={selectedClassDetails.shield}
@@ -360,19 +362,19 @@ const adjustedScores = useMemo(() => {
             alignment={selectedClassDetails.alignment}
             specialSkills={selectedClassDetails.specialSkills}
             selectedScores={selectedScores}
-            weaponProficiency={selectedClassDetails.weaponProficiency.score}
-            penalty={selectedClassDetails.weaponProficiency.penalty}
+            weaponProficiency={selectedClassDetails.weaponProficiency?.score}
+            penalty={selectedClassDetails.weaponProficiency?.penalty}
             newProficiency={
-              selectedClassDetails.weaponProficiency.newProficiency
+              selectedClassDetails.weaponProficiency?.newProficiency
             }
             startingMoney={selectedClassDetails.startingMoney}
             className={selectedClassDetails.name}
             race={selectedRace}
-            thiefSkills={classes.find((c) => c.name === "Thief").thiefSkills}
+            thiefSkills={classes.find((c) => c.name === "Thief")?.thiefSkills}
             racialSavingThrows={
-              races.find((r) => r.name === selectedRace).savingThrows
+              races.find((r) => r.name === selectedRace)?.savingThrows
             }
-            turnUndead={classes.find((c) => c.name === "Cleric").turnUndead}
+            turnUndead={classes.find((c) => c.name === "Cleric")?.turnUndead}
           />
 
           <RaceDetails race={selectedRaceDetails} />

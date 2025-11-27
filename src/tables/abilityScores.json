@@ -7,47 +7,47 @@
                     "score": 3,
                     "hitProbability": "-3",
                     "damageAdjustment": "-1",
-                    "weightAllowance": -350,
-                    "openDoors": 1,
+                    "weightAllowance": "-350",
+                    "openDoors": "1",
                     "bendBars": "0%"
                 },
                 {
                     "score": 4,
                     "hitProbability": "-2",
                     "damageAdjustment": "-1",
-                    "weightAllowance": -250,
-                    "openDoors": 1,
+                    "weightAllowance": "-250",
+                    "openDoors": "1",
                     "bendBars": "0%"
                 },
                 {
                     "score": 5,
                     "hitProbability": "-2",
                     "damageAdjustment": "-1",
-                    "weightAllowance": -250,
-                    "openDoors": 1,
+                    "weightAllowance": "-250",
+                    "openDoors": "1",
                     "bendBars": "0%"
                 },
                 {
                     "score": 6,
                     "hitProbability": "-1",
                     "damageAdjustment": "0",
-                    "weightAllowance": -150,
-                    "openDoors": 1,
+                    "weightAllowance": "-150",
+                    "openDoors": "1",
                     "bendBars": "0%"
                 },
                 {
                     "score": 7,
                     "hitProbability": "-1",
                     "damageAdjustment": "0",
-                    "weightAllowance": -150,
-                    "openDoors": 1,
+                    "weightAllowance": "-150",
+                    "openDoors": "1",
                     "bendBars": "0%"
                 },
                 {
                     "score": 8,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 0,
+                    "weightAllowance": "0",
                     "openDoors": "1-2",
                     "bendBars": "1%"
                 },
@@ -55,7 +55,7 @@
                     "score": 9,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 0,
+                    "weightAllowance": "0",
                     "openDoors": "1-2",
                     "bendBars": "1%"
                 },
@@ -63,7 +63,7 @@
                     "score": 10,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 0,
+                    "weightAllowance": "0",
                     "openDoors": "1-2",
                     "bendBars": "2%"
                 },
@@ -71,7 +71,7 @@
                     "score": 11,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 0,
+                    "weightAllowance": "0",
                     "openDoors": "1-2",
                     "bendBars": "2%"
                 },
@@ -79,7 +79,7 @@
                     "score": 12,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 100,
+                    "weightAllowance": "+100",
                     "openDoors": "1-2",
                     "bendBars": "4%"
                 },
@@ -87,7 +87,7 @@
                     "score": 13,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 100,
+                    "weightAllowance": "+100",
                     "openDoors": "1-2",
                     "bendBars": "4%"
                 },
@@ -95,7 +95,7 @@
                     "score": 14,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 200,
+                    "weightAllowance": "+200",
                     "openDoors": "1-2",
                     "bendBars": "7%"
                 },
@@ -103,7 +103,7 @@
                     "score": 15,
                     "hitProbability": "0",
                     "damageAdjustment": "0",
-                    "weightAllowance": 200,
+                    "weightAllowance": "+200",
                     "openDoors": "1-2",
                     "bendBars": "7%"
                 },
@@ -111,7 +111,7 @@
                     "score": 16,
                     "hitProbability": "0",
                     "damageAdjustment": "+1",
-                    "weightAllowance": 350,
+                    "weightAllowance": "+350",
                     "openDoors": "1-3",
                     "bendBars": "10%"
                 },
@@ -119,7 +119,7 @@
                     "score": 17,
                     "hitProbability": "+1",
                     "damageAdjustment": "+1",
-                    "weightAllowance": 500,
+                    "weightAllowance": "+500",
                     "openDoors": "1-3",
                     "bendBars": "13%"
                 },
@@ -127,7 +127,7 @@
                     "score": 18,
                     "hitProbability": "+1",
                     "damageAdjustment": "+2",
-                    "weightAllowance": 750,
+                    "weightAllowance": "+750",
                     "openDoors": "1-3",
                     "bendBars": "16%"
                 },
@@ -135,7 +135,7 @@
                     "score": 18.50,
                     "hitProbability": "+1",
                     "damageAdjustment": "+3",
-                    "weightAllowance": 1000,
+                    "weightAllowance": "+1000",
                     "openDoors": "1-3",
                     "bendBars": "20%"
                 },
@@ -143,7 +143,7 @@
                     "score": 18.75,
                     "hitProbability": "+2",
                     "damageAdjustment": "+3",
-                    "weightAllowance": 1250,
+                    "weightAllowance": "+1250",
                     "openDoors": "1-4",
                     "bendBars": "25%"
                 },
@@ -151,7 +151,7 @@
                     "score": 18.90,
                     "hitProbability": "+2",
                     "damageAdjustment": "+4",
-                    "weightAllowance": 1500,
+                    "weightAllowance": "+1500",
                     "openDoors": "1-4",
                     "bendBars": "30%"
                 },
@@ -159,7 +159,7 @@
                     "score": 18.99,
                     "hitProbability": "+2",
                     "damageAdjustment": "+5",
-                    "weightAllowance": 2000,
+                    "weightAllowance": "+2000",
                     "openDoors": "1-4(1)",
                     "bendBars": "35%"
                 },
@@ -167,7 +167,7 @@
                     "score": 18.00,
                     "hitProbability": "+3",
                     "damageAdjustment": "+6",
-                    "weightAllowance": 3000,
+                    "weightAllowance": "+3000",
                     "openDoors": "1-5(2)",
                     "bendBars": "40%"
                 }

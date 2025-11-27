@@ -378,9 +378,9 @@
                         "dwarf": 0,
                         "elf": 5,
                         "gnome": 0,
-                        "halfElf": 10,
+                        "halfelf": 10,
                         "halfling": 5,
-                        "half-orc": -5
+                        "halforc": -5
                     }
                 },
                 "openLocks": {
@@ -389,9 +389,9 @@
                         "dwarf": 10,
                         "elf": -5,
                         "gnome": 5,
-                        "halfElf": 0,
+                        "halfelf": 0,
                         "halfling": 5,
-                        "half-orc": 5
+                        "halforc": 5
                     }
                 },
                 "findRemoveTraps": {
@@ -400,9 +400,9 @@
                     "dwarf": 15,
                     "elf": 0,
                     "gnome": 10,
-                    "halfElf": 0,
+                    "halfelf": 0,
                     "halfling": 5,
-                    "half-orc": 5
+                    "halforc": 5
                 }
                 },
                 "moveSilently": {
@@ -411,9 +411,9 @@
                         "dwarf": 0,
                         "elf": 5,
                         "gnome": 5,
-                        "halfElf": 0,
+                        "halfelf": 0,
                         "halfling": 10,
-                        "half-orc": 0
+                        "halforc": 0
                     }
                 },
                 "hideInShadows": {
@@ -422,9 +422,9 @@
                         "dwarf": 0,
                         "elf": 10,
                         "gnome": 5,
-                        "halfElf": 5,
+                        "halfelf": 5,
                         "halfling": 15,
-                        "half-orc": 0
+                        "halforc": 0
                     }
                 },
                 "hearNoise": {
@@ -433,9 +433,9 @@
                         "dwarf": 0,
                         "elf": 5,
                         "gnome": 10,
-                        "halfElf": 0,
+                        "halfelf": 0,
                         "halfling": 5,
-                        "half-orc": 5
+                        "halforc": 5
                     }
                 },
                 "climbWalls": {
@@ -444,9 +444,9 @@
                         "dwarf": -10,
                         "elf": 0,
                         "gnome": -15,
-                        "halfElf": 0,
+                        "halfelf": 0,
                         "halfling": -15,
-                        "half-orc": 5
+                        "halforc": 5
                     }
                 },
                 "readLanguages": false

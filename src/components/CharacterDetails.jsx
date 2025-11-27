@@ -55,7 +55,9 @@ const CharacterDetails = ({
   const getModifiedThiefSkill = (skillName, baseChance) => {
     if (!thiefSkills || !race) return null;
 
-    const racialModifier = thiefSkills[skillName].modifier[race.toLowerCase()] || 0;
+    // Normalize race name to match JSON format (e.g., "Half-elf" -> "halfElf", "Half-orc" -> "half-orc")
+    const normalizedRace = race.toLowerCase().replace('-', '');
+    const racialModifier = thiefSkills[skillName]?.modifier?.[normalizedRace] || 0;
     const modifiedChance = baseChance + racialModifier;
 
     if (race === "Human") {
