@@ -179,119 +179,119 @@
                 {
                     "score": 3,
                     "languages": 0,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 4,
                     "languages": 0,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 5,
                     "languages": 0,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 6,
                     "languages": 0,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 7,
                     "languages": 0,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 8,
                     "languages": 1,
-                    "spellLevelMax": 0,
+                    "minSpellsPerLevel": 0,
                     "learnSpells": "0%",
                     "maxSpellsPerLevel": "-"
                 },
                 {
                     "score": 9,
                     "languages": 1,
-                    "spellLevelMax": 4,
+                    "minSpellsPerLevel": 4,
                     "learnSpells": "35%",
                     "maxSpellsPerLevel": 6
                 },
                 {
                     "score": 10,
                     "languages": 2,
-                    "spellLevelMax": 5,
+                    "minSpellsPerLevel": 5,
                     "learnSpells": "45%",
                     "maxSpellsPerLevel": 7
                 },
                 {
                     "score": 11,
                     "languages": 2,
-                    "spellLevelMax": 5,
+                    "minSpellsPerLevel": 5,
                     "learnSpells": "45%",
                     "maxSpellsPerLevel": 7
                 },
                 {
                     "score": 12,
                     "languages": 3,
-                    "spellLevelMax": 5,
+                    "minSpellsPerLevel": 5,
                     "learnSpells": "45%",
                     "maxSpellsPerLevel": 7
                 },
                 {
                     "score": 13,
                     "languages": 3,
-                    "spellLevelMax": 6,
+                    "minSpellsPerLevel": 6,
                     "learnSpells": "55%",
                     "maxSpellsPerLevel": 9
                 },
                 {
                     "score": 14,
                     "languages": 4,
-                    "spellLevelMax": 6,
+                    "minSpellsPerLevel": 6,
                     "learnSpells": "55%",
                     "maxSpellsPerLevel": 9
                 },
                 {
                     "score": 15,
                     "languages": 4,
-                    "spellLevelMax": 7,
+                    "minSpellsPerLevel": 7,
                     "learnSpells": "65%",
                     "maxSpellsPerLevel": 11
                 },
                 {
                     "score": 16,
                     "languages": 5,
-                    "spellLevelMax": 7,
+                    "minSpellsPerLevel": 7,
                     "learnSpells": "65%",
                     "maxSpellsPerLevel": 11
                 },
                 {
                     "score": 17,
                     "languages": 6,
-                    "spellLevelMax": 8,
+                    "minSpellsPerLevel": 8,
                     "learnSpells": "75%",
                     "maxSpellsPerLevel": 14
                 },
                 {
                     "score": 18,
                     "languages": 7,
-                    "spellLevelMax": 9,
+                    "minSpellsPerLevel": 9,
                     "learnSpells": "85%",
                     "maxSpellsPerLevel": 18
                 },
                 {
                     "score": 19,
                     "languages": 9,
-                    "spellLevelMax": 10,
+                    "minSpellsPerLevel": 10,
                     "learnSpells": "95%",
                     "maxSpellsPerLevel": "All"
                 }

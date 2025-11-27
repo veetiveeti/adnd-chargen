@@ -78,16 +78,26 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
     }
   }, [selectedScores.strength, selectedClass]);
 
-const availableClasses = useMemo(() => {
-  if (!selectedRace || Object.values(selectedScores).some(score => score === '')) return [];
+  const availableClasses = useMemo(() => {
+    if (
+      !selectedRace ||
+      Object.values(selectedScores).some((score) => score === "")
+    )
+      return [];
 
-  return classes.filter(cls => {
-    const meetsMinimumScores = Object.entries(cls.minimumAbilityScores)
-      .every(([ability, minScore]) => parseInt(selectedScores[ability.toLowerCase()]) >= minScore);
-    const className = cls.name.replace('-', '').toLowerCase();
-    return meetsMinimumScores && races.find(race => race.name === selectedRace).classes[className];
-  });
-}, [selectedRace, selectedScores, classes, races]);
+    return classes.filter((cls) => {
+      const meetsMinimumScores = Object.entries(cls.minimumAbilityScores).every(
+        ([ability, minScore]) =>
+          parseInt(selectedScores[ability.toLowerCase()]) >= minScore
+      );
+      // Keep the hyphen to match the races.json format
+      const className = cls.name.toLowerCase();
+      return (
+        meetsMinimumScores &&
+        races.find((race) => race.name === selectedRace).classes[className]
+      );
+    });
+  }, [selectedRace, selectedScores, classes, races]);
 
 const handleScoreChange = (ability, value) => {
   const newScore = parseInt(value);
@@ -312,7 +322,7 @@ const adjustedScores = useMemo(() => {
             strBendBars={abilityDetails?.strength.bendBars}
             intScore={selectedScores.intelligence}
             intAdditionalLanguages={abilityDetails.intelligence.languages}
-            intSpellLevelMax={abilityDetails.intelligence.spellLevelMax}
+            intMinSpellsPerLevel={abilityDetails.intelligence.minSpellsPerLevel}
             intLearnSpells={abilityDetails.intelligence.learnSpells}
             intMaxSpellsPerLevel={abilityDetails.intelligence.maxSpellsPerLevel}
             wisScore={selectedScores.wisdom}

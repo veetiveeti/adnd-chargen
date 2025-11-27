@@ -13,7 +13,7 @@ const CharacterAbilities = ({
   strOpenDoors,
   strBendBars,
   intAdditionalLanguages,
-  intSpellLevelMax,
+  intMinSpellsPerLevel,
   intLearnSpells,
   intMaxSpellsPerLevel,
   wisMagicAdjustment,
@@ -128,11 +128,11 @@ const CharacterAbilities = ({
           <dt>Additional Languages</dt>
           <dd>{intAdditionalLanguages}</dd>
 
-          <dt>Max Spell Level</dt>
-          <dd>{intSpellLevelMax}</dd>
-
           <dt>Spell Knowledge</dt>
           <dd>{intLearnSpells}</dd>
+
+          <dt>Minimum Spells Per Level</dt>
+          <dd>{intMinSpellsPerLevel}</dd>
 
           <dt>Maximum Spells Per Level</dt>
           <dd>{intMaxSpellsPerLevel}</dd>
