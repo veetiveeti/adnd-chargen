@@ -331,7 +331,7 @@ const adjustedScores = useMemo(() => {
           marginBottom: "2rem"
         }}
       >
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+        <div className="rollingMethodSelector">
           <label htmlFor="method-select"><b>Rolling Method:</b></label>
           <select
             id="method-select"
