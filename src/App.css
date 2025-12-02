@@ -96,6 +96,13 @@ body {
   color: var(--text-primary);
   box-shadow: 0 2px 8px var(--shadow-color);
   transition: all 0.3s ease;
+
+  @media (max-width: 680px) {
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .dark-mode-toggle:hover {
