@@ -318,7 +318,7 @@ const adjustedScores = useMemo(() => {
   return (
     <main className="mainContainer">
       <h1 style={{ textAlign: "center" }}>
-        AD&D 1st Edition Character Planner
+        AD&D 1st Edition Character Helper
       </h1>
 
       <div
@@ -475,7 +475,7 @@ const adjustedScores = useMemo(() => {
               {ability.charAt(0).toUpperCase() + ability.slice(1).toLowerCase()}
             </label>
             <input
-              type="text"
+              type="number"
               inputMode="numeric"
               pattern="[0-9]*"
               value={selectedScores[ability]}
