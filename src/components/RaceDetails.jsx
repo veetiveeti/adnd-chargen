@@ -1,18 +1,10 @@
 import React from 'react';
 
-const raceDetailsStyle = {
-  padding: '2rem',
-  backgroundColor: 'white',
-  borderRadius: '8px',
-  outline: '1px solid #c8c8c8',
-  filter: 'drop-shadow(0 0 0.75rem #e0e0e0)'
-};
-
 const RaceDetails = ({ race }) => {
   if (!race) return null;
 
   return (
-    <section style={raceDetailsStyle}>
+    <section className="raceDetailsContainer">
       <h2>Race Details: {race.name}</h2>
       <dl
         className="raceDetails"
