@@ -475,7 +475,9 @@ const adjustedScores = useMemo(() => {
               {ability.charAt(0).toUpperCase() + ability.slice(1).toLowerCase()}
             </label>
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               value={selectedScores[ability]}
               onChange={(e) => handleScoreChange(ability, e.target.value)}
               readOnly={rollingMethod === '3' || rollingMethod === '4'}
