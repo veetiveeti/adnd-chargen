@@ -4,6 +4,12 @@ import CharacterAbilities from './CharacterAbilities';
 import RaceDetails from './RaceDetails';
 import CasinoIcon from '@mui/icons-material/Casino';
 import Button from '@mui/material/Button';
+import { 
+  calculateStartingAge, 
+  getAgeCategory, 
+  getAgeCategoryName,
+  getAgeModifiers 
+} from '../utils/ageUtils';
 
 const ABILITY_SCORES = ['strength', 'intelligence', 'wisdom', 'dexterity', 'constitution', 'charisma'];
 
@@ -56,8 +62,9 @@ const rollExceptionalStrength = () => {
   return 0; // represents 00
 };
 
-const CharacterCreation = ({ races, classes, abilityScores }) => {
+const CharacterCreation = ({ races, classes, abilityScores, agesData }) => {
   const isInitialMount = useRef(true);
+  const characterAbilitiesRef = useRef(null);
   const [rollingMethod, setRollingMethod] = useState('1');
   const [rolledScores, setRolledScores] = useState(Array(6).fill(0));
   const [characterSets, setCharacterSets] = useState([]); // For Method IV
@@ -70,6 +77,8 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
   const [selectedRace, setSelectedRace] = useState('');
   const [selectedClass, setSelectedClass] = useState('');
   const [exceptionalStrength, setExceptionalStrength] = useState(null);
+  const [characterAge, setCharacterAge] = useState(null);
+  const [ageCategory, setAgeCategory] = useState(null);
 
   const performRoll = (method) => {
     setAnimatingScores(true);
@@ -77,7 +86,6 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
     setSelectedScores(Object.fromEntries(ABILITY_SCORES.map(ability => [ability, ''])));
     setSelectedSetIndex(null);
     
-    let animationTimer;
     const animationDuration = 2000;
     const intervalDuration = 50;
     const totalIterations = animationDuration / intervalDuration;
@@ -94,7 +102,7 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
           setRolledScores(Array(6).fill().map(() => Math.floor(Math.random() * 13) + 6));
         }
         currentIteration++;
-        animationTimer = setTimeout(animate, intervalDuration);
+        setTimeout(animate, intervalDuration);
       } else {
         // Generate final rolls based on method
         if (method === '1') {
@@ -169,6 +177,39 @@ const CharacterCreation = ({ races, classes, abilityScores }) => {
     performRoll(rollingMethod);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rollingMethod]);
+
+  // Scroll to Character Abilities when class is selected
+  useEffect(() => {
+    if (selectedClass && characterAbilitiesRef.current) {
+      // Small delay to ensure content is rendered
+      setTimeout(() => {
+        characterAbilitiesRef.current?.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }, 100);
+    }
+  }, [selectedClass]);
+
+  // Calculate age when race and class are selected
+  useEffect(() => {
+    if (selectedRace && selectedClass && agesData) {
+      const age = calculateStartingAge(
+        selectedRace, 
+        selectedClass, 
+        agesData.startingAges
+      );
+      
+      if (age) {
+        setCharacterAge(age);
+        const category = getAgeCategory(age, selectedRace, agesData.ageCategories);
+        setAgeCategory(category);
+      }
+    } else {
+      setCharacterAge(null);
+      setAgeCategory(null);
+    }
+  }, [selectedRace, selectedClass, agesData]);
 
   const availableClasses = useMemo(() => {
     if (
@@ -284,13 +325,15 @@ const adjustedScores = useMemo(() => {
   if (!selectedRaceDetails) return selectedScores;
 
   const adjusted = { ...selectedScores };
+  
+  // Apply racial modifiers first
   if (selectedRaceDetails.bonus) {
       Object.entries(selectedRaceDetails.bonus).forEach(([ability, value]) => {
           if (adjusted[ability]) {
               adjusted[ability] = {
                   original: parseInt(adjusted[ability]),
                   adjusted: parseInt(adjusted[ability]) + value,
-                  modifier: value
+                  racialModifier: value
               };
           }
       });
@@ -301,13 +344,49 @@ const adjustedScores = useMemo(() => {
               adjusted[ability] = {
                   original: parseInt(adjusted[ability]),
                   adjusted: parseInt(adjusted[ability]) - value,
-                  modifier: -value
+                  racialModifier: -value
               };
           }
       });
   }
+  
+  // Apply age modifiers on top of racial modifiers
+  if (ageCategory && agesData) {
+    const ageModifiers = getAgeModifiers(ageCategory, agesData.ageEffects);
+    
+    Object.entries(ageModifiers).forEach(([ability, ageModifier]) => {
+      if (adjusted[ability]) {
+        const currentScore = typeof adjusted[ability] === 'object' 
+          ? adjusted[ability].adjusted 
+          : parseInt(adjusted[ability]);
+        
+        if (!isNaN(currentScore)) {
+          if (typeof adjusted[ability] === 'object') {
+            adjusted[ability] = {
+              ...adjusted[ability],
+              finalAdjusted: currentScore + ageModifier,
+              ageModifier: ageModifier
+            };
+          } else {
+            adjusted[ability] = {
+              original: parseInt(adjusted[ability]),
+              finalAdjusted: currentScore + ageModifier,
+              ageModifier: ageModifier
+            };
+          }
+        }
+      }
+    });
+  }
+  
   return adjusted;
-}, [selectedScores, selectedRaceDetails]);
+}, [selectedScores, selectedRaceDetails, ageCategory, agesData]);
+
+  // Check if all ability scores are filled
+  const allScoresFilled = useMemo(() => {
+    return Object.values(selectedScores).every(score => score !== '' && !isNaN(parseInt(score)));
+  }, [selectedScores]);
+
   const methodDescriptions = {
     '1': '4d6 are rolled, and the lowest die is discarded. Arranged in the order the player desires.',
     '2': '3d6 are rolled 12 times and the highest 6 scores are retained. Arranged in the order the player desires.',
@@ -337,12 +416,6 @@ const adjustedScores = useMemo(() => {
             id="method-select"
             value={rollingMethod}
             onChange={(e) => setRollingMethod(e.target.value)}
-            style={{
-              padding: "0.5rem",
-              fontSize: "1rem",
-              borderRadius: "4px",
-              border: "1px solid #ccc"
-            }}
           >
             <option value="1">Method I</option>
             <option value="2">Method II</option>
@@ -380,19 +453,18 @@ const adjustedScores = useMemo(() => {
               justifyContent: "center",
               alignItems: "center",
               gap: "1rem",
-              marginTop: "1rem"
             }}
           >
             <CasinoIcon className={animatingScores ? "rotate" : ""} />
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
               {rolledScores.map((score, index) => (
                 <p
                   key={index}
                   style={{
-                    color: usedIndices.has(index) ? "#c8c8c8" : "inherit",
-                    marginRight: "10px",
+                    color: usedIndices.has(index) ? "var(--disabled-text)" : "inherit",
                     fontSize: "1.5rem",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
+                    opacity: usedIndices.has(index) ? 0.4 : 1
                   }}
                 >
                   {score}
@@ -405,44 +477,29 @@ const adjustedScores = useMemo(() => {
       )}
 
       {rollingMethod === '4' && (
-        <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
-          <h2 style={{ textAlign: "center" }}>Select a Character Set</h2>
-          <p style={{ textAlign: "center", color: "#666", marginBottom: "1rem" }}>
+        <div className="character-set-selection-container">
+          <h2>Select a Character Set</h2>
+          <p className="instruction-text">
             Click on a character set to select it
           </p>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1rem",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 1rem"
-          }}>
+          <div className="character-sets-grid">
             {characterSets.map((set, setIndex) => (
               <div
                 key={setIndex}
                 onClick={() => !animatingScores && handleMethodIVSelection(setIndex)}
-                style={{
-                  padding: "1rem",
-                  border: selectedSetIndex === setIndex ? "3px solid #1976d2" : "1px solid #ccc",
-                  borderRadius: "8px",
-                  cursor: animatingScores ? "default" : "pointer",
-                  backgroundColor: selectedSetIndex === setIndex ? "#e3f2fd" : "white",
-                  transition: "all 0.2s",
-                  boxShadow: selectedSetIndex === setIndex ? "0 4px 8px rgba(25, 118, 210, 0.2)" : "none"
-                }}
+                className={`character-set-card ${selectedSetIndex === setIndex ? 'selected' : ''} ${animatingScores ? 'disabled' : ''}`}
               >
-                <h4 style={{ margin: "0 0 0.5rem 0", textAlign: "center", color: "#1976d2" }}>
+                <h4>
                   Character {setIndex + 1}
                   {selectedSetIndex === setIndex && " ✓"}
                 </h4>
-                <div style={{ fontSize: "0.9rem" }}>
+                <div className="character-set-details">
                   {ABILITY_SCORES.map((ability, abilityIndex) => (
-                    <div key={ability} style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.25rem" }}>
-                      <span style={{ fontWeight: "500", textTransform: "capitalize" }}>
+                    <div key={ability}>
+                      <span>
                         {ability.slice(0, 3)}:
                       </span>
-                      <span style={{ fontWeight: "bold" }}>{set[abilityIndex]}</span>
+                      <span>{set[abilityIndex]}</span>
                     </div>
                   ))}
                 </div>
@@ -455,8 +512,8 @@ const adjustedScores = useMemo(() => {
       <hr style={{ marginTop: "2rem", marginBottom: "2rem" }} />
 
       {rollingMethod === '4' && selectedSetIndex === null && !animatingScores && (
-        <div style={{ textAlign: "center", padding: "2rem", color: "#666" }}>
-          <p>Please select a character set above to continue</p>
+        <div style={{ textAlign: "center", padding: "2rem" }}>
+          <p style={{ color: "var(--text-secondary)" }}>Please select a character set above to continue</p>
         </div>
       )}
 
@@ -503,6 +560,8 @@ const adjustedScores = useMemo(() => {
             className="raceSelector"
             value={selectedRace}
             onChange={(e) => setSelectedRace(e.target.value)}
+            disabled={!allScoresFilled}
+            title={!allScoresFilled ? "Please fill in all ability scores first" : ""}
           >
             <option value="">Select a race</option>
             {races.map((race) => (
@@ -511,6 +570,11 @@ const adjustedScores = useMemo(() => {
               </option>
             ))}
           </select>
+          {!allScoresFilled && (
+            <p style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>
+              Fill in all ability scores to select race
+            </p>
+          )}
         </section>
 
         <section className="classSection">
@@ -519,7 +583,14 @@ const adjustedScores = useMemo(() => {
             className="classSelector"
             value={selectedClass}
             onChange={(e) => setSelectedClass(e.target.value)}
-            disabled={availableClasses.length === 0}
+            disabled={!allScoresFilled || availableClasses.length === 0}
+            title={
+              !allScoresFilled 
+                ? "Please fill in all ability scores first" 
+                : availableClasses.length === 0 
+                  ? "Select a race first or ensure ability scores meet class requirements"
+                  : ""
+            }
           >
             <option value="">Select a class</option>
             {availableClasses.map((cls) => (
@@ -528,12 +599,17 @@ const adjustedScores = useMemo(() => {
               </option>
             ))}
           </select>
+          {!allScoresFilled && (
+            <p style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>
+              Fill in all ability scores to select class
+            </p>
+          )}
         </section>
       </div>
       )}
 
       {selectedClass && selectedClassDetails && (rollingMethod !== '4' || selectedSetIndex !== null) && (
-        <div className="characterInfoContainer">
+        <div className="characterInfoContainer" ref={characterAbilitiesRef}>
           <CharacterAbilities
             adjustedScores={adjustedScores}
             raceName={selectedRaceDetails?.name}
@@ -567,6 +643,10 @@ const adjustedScores = useMemo(() => {
             chaMaxHenchman={abilityDetails?.charisma?.maxHenchman}
             chaLoyalty={abilityDetails?.charisma?.loyalty}
             chaReaction={abilityDetails?.charisma?.reaction}
+            characterAge={characterAge}
+            ageCategory={ageCategory}
+            ageCategoryName={ageCategory ? getAgeCategoryName(ageCategory) : null}
+            ageModifiers={ageCategory && agesData ? getAgeModifiers(ageCategory, agesData.ageEffects) : null}
           />
 
           <CharacterDetails

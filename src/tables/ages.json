@@ -1,0 +1,173 @@
+{
+  "startingAges": {
+    "dwarf": {
+      "cleric": { "base": 250, "variable": "2d20" },
+      "fighter": { "base": 40, "variable": "5d4" },
+      "thief": { "base": 75, "variable": "3d6" }
+    },
+    "elf": {
+      "cleric": { "base": 500, "variable": "10d10" },
+      "fighter": { "base": 130, "variable": "5d6" },
+      "magic-user": { "base": 150, "variable": "5d6" },
+      "thief": { "base": 100, "variable": "5d6" }
+    },
+    "gnome": {
+      "cleric": { "base": 300, "variable": "3d12" },
+      "fighter": { "base": 60, "variable": "5d4" },
+      "illusionist": { "base": 100, "variable": "2d12" },
+      "thief": { "base": 80, "variable": "5d4" }
+    },
+    "half-elf": {
+      "cleric": { "base": 40, "variable": "2d4" },
+      "druid": { "base": 40, "variable": "2d4" },
+      "fighter": { "base": 22, "variable": "3d4" },
+      "magic-user": { "base": 30, "variable": "2d8" },
+      "ranger": { "base": 22, "variable": "3d8" },
+      "thief": { "base": 22, "variable": "3d8" }
+    },
+    "halfling": {
+      "fighter": { "base": 20, "variable": "3d4" },
+      "thief": { "base": 40, "variable": "2d4" }
+    },
+    "half-orc": {
+      "cleric": { "base": 20, "variable": "1d4" },
+      "fighter": { "base": 13, "variable": "1d4" },
+      "thief": { "base": 20, "variable": "2d4" }
+    },
+    "human": {
+      "cleric": { "base": 18, "variable": "1d4" },
+      "druid": { "base": 18, "variable": "1d4" },
+      "fighter": { "base": 15, "variable": "1d4" },
+      "paladin": { "base": 17, "variable": "1d4" },
+      "ranger": { "base": 20, "variable": "1d4" },
+      "magic-user": { "base": 24, "variable": "2d8" },
+      "illusionist": { "base": 30, "variable": "1d6" },
+      "thief": { "base": 18, "variable": "1d4" },
+      "assassin": { "base": 20, "variable": "1d4" },
+      "monk": { "base": 21, "variable": "1d4" }
+    }
+  },
+  "ageCategories": {
+    "dwarf": {
+      "youngAdult": { "min": 35, "max": 50 },
+      "mature": { "min": 51, "max": 150 },
+      "middleAged": { "min": 151, "max": 250 },
+      "old": { "min": 251, "max": 350 },
+      "venerable": { "min": 351, "max": 450 }
+    },
+    "dwarf-mountain": {
+      "youngAdult": { "min": 40, "max": 60 },
+      "mature": { "min": 61, "max": 175 },
+      "middleAged": { "min": 176, "max": 275 },
+      "old": { "min": 276, "max": 400 },
+      "venerable": { "min": 401, "max": 525 }
+    },
+    "elf": {
+      "youngAdult": { "min": 75, "max": 150 },
+      "mature": { "min": 151, "max": 450 },
+      "middleAged": { "min": 451, "max": 700 },
+      "old": { "min": 701, "max": 1000 },
+      "venerable": { "min": 1001, "max": 1200 }
+    },
+    "elf-aquatic": {
+      "youngAdult": { "min": 75, "max": 150 },
+      "mature": { "min": 151, "max": 450 },
+      "middleAged": { "min": 451, "max": 700 },
+      "old": { "min": 701, "max": 1000 },
+      "venerable": { "min": 1001, "max": 1200 }
+    },
+    "elf-drow": {
+      "youngAdult": { "min": 50, "max": 100 },
+      "mature": { "min": 101, "max": 400 },
+      "middleAged": { "min": 401, "max": 600 },
+      "old": { "min": 601, "max": 800 },
+      "venerable": { "min": 801, "max": 1000 }
+    },
+    "elf-gray": {
+      "youngAdult": { "min": 150, "max": 250 },
+      "mature": { "min": 251, "max": 650 },
+      "middleAged": { "min": 651, "max": 1000 },
+      "old": { "min": 1001, "max": 1500 },
+      "venerable": { "min": 1501, "max": 2000 }
+    },
+    "elf-high": {
+      "youngAdult": { "min": 100, "max": 175 },
+      "mature": { "min": 176, "max": 550 },
+      "middleAged": { "min": 551, "max": 875 },
+      "old": { "min": 876, "max": 1200 },
+      "venerable": { "min": 1201, "max": 1600 }
+    },
+    "elf-wood": {
+      "youngAdult": { "min": 75, "max": 150 },
+      "mature": { "min": 151, "max": 500 },
+      "middleAged": { "min": 501, "max": 800 },
+      "old": { "min": 801, "max": 1100 },
+      "venerable": { "min": 1101, "max": 1350 }
+    },
+    "gnome": {
+      "youngAdult": { "min": 50, "max": 90 },
+      "mature": { "min": 91, "max": 300 },
+      "middleAged": { "min": 301, "max": 450 },
+      "old": { "min": 451, "max": 600 },
+      "venerable": { "min": 601, "max": 750 }
+    },
+    "half-elf": {
+      "youngAdult": { "min": 24, "max": 40 },
+      "mature": { "min": 41, "max": 100 },
+      "middleAged": { "min": 101, "max": 175 },
+      "old": { "min": 176, "max": 250 },
+      "venerable": { "min": 251, "max": 325 }
+    },
+    "halfling": {
+      "youngAdult": { "min": 22, "max": 33 },
+      "mature": { "min": 34, "max": 68 },
+      "middleAged": { "min": 69, "max": 101 },
+      "old": { "min": 102, "max": 144 },
+      "venerable": { "min": 145, "max": 199 }
+    },
+    "half-orc": {
+      "youngAdult": { "min": 12, "max": 15 },
+      "mature": { "min": 16, "max": 30 },
+      "middleAged": { "min": 31, "max": 45 },
+      "old": { "min": 46, "max": 60 },
+      "venerable": { "min": 61, "max": 80 }
+    },
+    "human": {
+      "youngAdult": { "min": 14, "max": 20 },
+      "mature": { "min": 21, "max": 40 },
+      "middleAged": { "min": 41, "max": 60 },
+      "old": { "min": 61, "max": 90 },
+      "venerable": { "min": 91, "max": 120 }
+    }
+  },
+  "ageEffects": {
+    "youngAdult": {
+      "wisdom": -1,
+      "constitution": 1
+    },
+    "mature": {
+      "strength": 1,
+      "wisdom": 1
+    },
+    "middleAged": {
+      "strength": -1,
+      "constitution": -1,
+      "intelligence": 1,
+      "wisdom": 1
+    },
+    "old": {
+      "strength": -2,
+      "dexterity": -2,
+      "constitution": -1,
+      "wisdom": 1
+    },
+    "venerable": {
+      "strength": -1,
+      "dexterity": -1,
+      "constitution": -1,
+      "intelligence": 1,
+      "wisdom": 1
+    }
+  }
+}
+

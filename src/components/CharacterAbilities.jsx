@@ -30,23 +30,46 @@ const CharacterAbilities = ({
   chaReaction,
   adjustedScores,
   raceName,
+  characterAge,
+  ageCategory,
+  ageCategoryName,
+  ageModifiers,
 }) => {
 
   const renderScore = (ability) => {
     const score = adjustedScores[ability];
+    
     if (typeof score === 'object') {
+      const hasRacialMod = score.racialModifier !== undefined;
+      const hasAgeMod = score.ageModifier !== undefined;
+      const finalScore = score.finalAdjusted || score.adjusted;
+      
       return (
         <>
-          {score.adjusted}
+          {finalScore}
           <span style={modifierStyle}>
-            (includes {score.modifier > 0 ? '+' : ''}{score.modifier} from {raceName})
+            (
+            {hasRacialMod && (
+              <>
+                {score.racialModifier > 0 ? '+' : ''}{score.racialModifier} racial
+              </>
+            )}
+            {hasRacialMod && hasAgeMod && ', '}
+            {hasAgeMod && (
+              <>
+                {score.ageModifier > 0 ? '+' : ''}{score.ageModifier} age
+              </>
+            )}
+            )
           </span>
         </>
       );
     }
+    
     if (ability === 'strength' && exceptionalStrength !== null) {
       return `18(${exceptionalStrength === 0 ? '00' : exceptionalStrength.toString().padStart(2, '0')})`;
     }
+    
     return score;
   };
 
@@ -209,6 +232,35 @@ const CharacterAbilities = ({
           <dt>Reaction Adjustment</dt>
           <dd>{chaReaction}</dd>
         </div>
+
+        {characterAge && ageCategory && (
+          <div style={{ gridColumn: '1 / -1', marginTop: '1rem', paddingTop: '1rem', borderTop: '2px solid var(--border-color)' }}>
+            <h3 style={{ marginBottom: '1rem' }}>Age & Aging Effects</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+              <div>
+                <dt>Character Age</dt>
+                <dd>{characterAge} years old</dd>
+              </div>
+              <div>
+                <dt>Age Category</dt>
+                <dd>{ageCategoryName}</dd>
+              </div>
+              {ageModifiers && Object.keys(ageModifiers).length > 0 && (
+                <div>
+                  <dt>Age Modifiers</dt>
+                  <dd>
+                    {Object.entries(ageModifiers).map(([ability, modifier], index) => (
+                      <span key={ability}>
+                        {ability.charAt(0).toUpperCase() + ability.slice(1)} {modifier > 0 ? '+' : ''}{modifier}
+                        {index < Object.entries(ageModifiers).length - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </dl>
     </section>
   );
