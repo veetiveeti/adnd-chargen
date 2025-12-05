@@ -112,7 +112,7 @@ const CharacterAbilities = ({
       <h2>Character Abilities</h2>
       <dl className="characterAbilities">
         <div>
-          <h3>Strength</h3>
+          <h3>STRENGTH</h3>
           <hr />
           <div>
             <dt>Score</dt>
@@ -141,7 +141,7 @@ const CharacterAbilities = ({
         </div>
 
         <div>
-          <h3>Intelligence</h3>
+          <h3>INTELLIGENCE</h3>
 
           <hr />
 
@@ -162,7 +162,7 @@ const CharacterAbilities = ({
         </div>
 
         <div>
-          <h3>Wisdom</h3>
+          <h3>WISDOM</h3>
 
           <hr />
 
@@ -180,7 +180,7 @@ const CharacterAbilities = ({
         </div>
 
         <div>
-          <h3>Dexterity</h3>
+          <h3>DEXTERITY</h3>
 
           <hr />
 
@@ -198,7 +198,7 @@ const CharacterAbilities = ({
         </div>
 
         <div>
-          <h3>Constitution</h3>
+          <h3>CONSTITUTION</h3>
 
           <hr />
 
@@ -216,7 +216,7 @@ const CharacterAbilities = ({
         </div>
 
         <div>
-          <h3>Charisma</h3>
+          <h3>CHARISMA</h3>
 
           <hr />
 
@@ -235,7 +235,7 @@ const CharacterAbilities = ({
 
         {characterAge && ageCategory && (
           <div style={{ gridColumn: '1 / -1', marginTop: '1rem', paddingTop: '1rem', borderTop: '2px solid var(--border-color)' }}>
-            <h3 style={{ marginBottom: '1rem' }}>Age & Aging Effects</h3>
+            <h3 style={{ marginBottom: '1rem' }}>AGE & AGING EFFECTS</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
               <div>
                 <dt>Character Age</dt>
