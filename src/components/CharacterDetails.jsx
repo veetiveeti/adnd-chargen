@@ -26,6 +26,7 @@ const CharacterDetails = ({
   specialSkills, 
   selectedScores, 
   startingMoney,
+  secondarySkill,
   className,
   poisonSave,
   petrificationSave,
@@ -190,6 +191,23 @@ const CharacterDetails = ({
           <dt>Starting Money</dt>
           <dd>{generatedMoney} gold pieces</dd>
         </div>
+
+        {secondarySkill && (
+          <div>
+            <dt>Secondary Skill</dt>
+            <dd>
+              {Array.isArray(secondarySkill) && secondarySkill.length > 1 ? (
+                <ul>
+                  {secondarySkill.map((skill, index) => (
+                    <li key={index}>{skill}</li>
+                  ))}
+                </ul>
+              ) : (
+                <span>{Array.isArray(secondarySkill) ? secondarySkill[0] : secondarySkill}</span>
+              )}
+            </dd>
+          </div>
+        )}
 
         {className.toLowerCase() === "thief" && thiefSkills && (
           <div>

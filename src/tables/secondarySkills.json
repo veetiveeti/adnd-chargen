@@ -1,0 +1,28 @@
+{
+  "secondarySkills": [
+    { "min": 1, "max": 2, "skill": "Armorer" },
+    { "min": 3, "max": 4, "skill": "Bowyer/fletcher" },
+    { "min": 5, "max": 10, "skill": "Farmer/gardener" },
+    { "min": 11, "max": 14, "skill": "Fisher (netting)" },
+    { "min": 15, "max": 20, "skill": "Forester" },
+    { "min": 21, "max": 23, "skill": "Gambler" },
+    { "min": 24, "max": 27, "skill": "Hunter/fisher (hook and line)" },
+    { "min": 28, "max": 32, "skill": "Husbandman (animal husbandry)" },
+    { "min": 33, "max": 34, "skill": "Jeweler/lapidary" },
+    { "min": 35, "max": 37, "skill": "Leather worker/tanner" },
+    { "min": 38, "max": 39, "skill": "Limner/painter" },
+    { "min": 40, "max": 42, "skill": "Mason/carpenter" },
+    { "min": 43, "max": 44, "skill": "Miner" },
+    { "min": 45, "max": 46, "skill": "Navigator (fresh or salt water)" },
+    { "min": 47, "max": 49, "skill": "Sailor (fresh or salt)" },
+    { "min": 50, "max": 51, "skill": "Shipwright (boats or ships)" },
+    { "min": 52, "max": 54, "skill": "Tailor/weaver" },
+    { "min": 55, "max": 57, "skill": "Teamster/freighter" },
+    { "min": 58, "max": 60, "skill": "Trader/barterer" },
+    { "min": 61, "max": 64, "skill": "Trapper/furrier" },
+    { "min": 65, "max": 67, "skill": "Woodworker/cabinetmaker" },
+    { "min": 68, "max": 85, "skill": "No skill of measurable worth" },
+    { "min": 86, "max": 100, "skill": "Roll twice, ignoring this result hereafter" }
+  ]
+}
+

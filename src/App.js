@@ -6,6 +6,7 @@ import races from './tables/races.json';
 import classes from './tables/classes.json';
 import abilityScores from './tables/abilityScores.json';
 import ages from './tables/ages.json';
+import secondarySkills from './tables/secondarySkills.json';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         classes={classes.classes} 
         abilityScores={abilityScores.abilityScores}
         agesData={ages}
+        secondarySkillsData={secondarySkills.secondarySkills}
       />
     </>
   );

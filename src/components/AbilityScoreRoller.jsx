@@ -10,6 +10,7 @@ import {
   getAgeCategoryName,
   getAgeModifiers 
 } from '../utils/ageUtils';
+import { rollSecondarySkill } from '../utils/secondarySkillsUtils';
 
 const ABILITY_SCORES = ['strength', 'intelligence', 'wisdom', 'dexterity', 'constitution', 'charisma'];
 
@@ -62,7 +63,7 @@ const rollExceptionalStrength = () => {
   return 0; // represents 00
 };
 
-const CharacterCreation = ({ races, classes, abilityScores, agesData }) => {
+const CharacterCreation = ({ races, classes, abilityScores, agesData, secondarySkillsData }) => {
   const isInitialMount = useRef(true);
   const characterAbilitiesRef = useRef(null);
   const [rollingMethod, setRollingMethod] = useState('1');
@@ -79,6 +80,7 @@ const CharacterCreation = ({ races, classes, abilityScores, agesData }) => {
   const [exceptionalStrength, setExceptionalStrength] = useState(null);
   const [characterAge, setCharacterAge] = useState(null);
   const [ageCategory, setAgeCategory] = useState(null);
+  const [secondarySkill, setSecondarySkill] = useState(null);
 
   const performRoll = (method) => {
     setAnimatingScores(true);
@@ -210,6 +212,16 @@ const CharacterCreation = ({ races, classes, abilityScores, agesData }) => {
       setAgeCategory(null);
     }
   }, [selectedRace, selectedClass, agesData]);
+
+  // Roll for secondary skill when class is selected
+  useEffect(() => {
+    if (selectedClass && secondarySkillsData) {
+      const skill = rollSecondarySkill(secondarySkillsData);
+      setSecondarySkill(skill);
+    } else {
+      setSecondarySkill(null);
+    }
+  }, [selectedClass, secondarySkillsData]);
 
   const availableClasses = useMemo(() => {
     if (
@@ -670,6 +682,7 @@ const adjustedScores = useMemo(() => {
               selectedClassDetails.weaponProficiency?.newProficiency
             }
             startingMoney={selectedClassDetails.startingMoney}
+            secondarySkill={secondarySkill}
             className={selectedClassDetails.name}
             race={selectedRace}
             thiefSkills={classes.find((c) => c.name === "Thief")?.thiefSkills}
